@@ -22,17 +22,7 @@ const projects = [
     logo: "/counter.png",
     link: "https://counterbank.vercel.app",
   },
-  {
-    name: "Google Developer ",
-    logo: "/google.png",
-    link: "https://makanta.xyz",
-  },
-  {
-    name: "Portfolio",
-    logo: "/portfolio.png",
-    link: "https://makanta.xyz",
-  },
-  {
+   {
     name: "Numtify",
     logo: "/numtify.png",
     link: "https://numtify.vercel.app",
@@ -42,6 +32,12 @@ const projects = [
     logo: "/medium.png",
     link: "https://medium.com/@makanta",
   },
+  {
+    name: "Portfolio",
+    logo: "/portfolio.png",
+    link: "https://makanta.xyz",
+  },
+
 ];
 
 const Home = () => {
@@ -103,7 +99,6 @@ const Home = () => {
             </h1>
             <h1
               className={`relative text-4xl lg:text-[5rem] font-medium lg:font-bold scale-y-125 tracking-widest text-orange-100 top-1 left-1 `}
-              // style={{ WebkitTextStroke: "2px #f5f5f5" }}
             >
               MAKANTA
             </h1>
