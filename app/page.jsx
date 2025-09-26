@@ -1,12 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import emailjs from "emailjs-com";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import React, { useState, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaXTwitter } from "react-icons/fa6";
-import Link from "next/link";
 
 const projects = [
   {
@@ -42,19 +45,40 @@ const projects = [
 ];
 
 const Home = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
 
-    // integrate with EmailJS, Nodemailer API, or Formspree
-    setForm({ name: "", email: "", message: "" });
+    const form = e.target;
+
+    setLoading(true);
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+      toast.success("Message sent successfully!", {
+        position: "top-right",
+        autoClose: 4000,
+        theme: "colored",
+      });
+      form.reset();
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.", {
+        position: "top-right",
+        autoClose: 4000,
+        theme: "colored",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
   return (
     <main className=" max-w-full bg-white  ">
       <section className="intro-section grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto items-center px-4 lg:pt-16 pb-8 lg:px-0 h-auto ">
@@ -269,7 +293,11 @@ const Home = () => {
             <h2 className=" text-2xl border-b-2 border-orange-500 inline-block">
               Get in Touch
             </h2>
-            <form onSubmit={handleSubmit} className="bg-white/20  space-y-6">
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="bg-white/20  space-y-6"
+            >
               {/* Name */}
               <div>
                 <label
@@ -280,10 +308,9 @@ const Home = () => {
                 </label>
                 <input
                   type="text"
-                  name="name"
                   id="name"
-                  value={form.name}
-                  onChange={handleChange}
+                  name="name"
+                  placeholder="Your Name"
                   required
                   className="w-full border border-black/50  px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
                 />
@@ -299,10 +326,9 @@ const Home = () => {
                 </label>
                 <input
                   type="email"
-                  name="email"
                   id="email"
-                  value={form.email}
-                  onChange={handleChange}
+                  name="email"
+                  placeholder="Your Email"
                   required
                   className="w-full border border-black/50  px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
                 />
@@ -320,21 +346,25 @@ const Home = () => {
                   name="message"
                   id="message"
                   rows="5"
-                  value={form.message}
-                  onChange={handleChange}
                   required
+                  placeholder="Your Message"
                   className="w-full border border-black/50  px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
                 />
               </div>
 
               <button
                 type="submit"
-                className="relative p-2 px-3 bg-orange-100 font-karla font-medium cursor-pointer  group"
+                disabled={loading}
+                className={`relative p-2 px-3  ${
+                  loading ? "bg-gray-300" : "bg-orange-100"
+                } font-karla font-medium cursor-pointer  group`}
               >
-                <span className="border absolute p-2 px-3 top-0 left-0 w-full h-full translate-x-0.5 translate-y-0.5 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-400  "></span>
-                Send Message
+                <span className="border absolute p-2 px-3 top-0 left-0 w-full h-full translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-400  "></span>
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
+            {/* TOASTIFY CONTAINER */}
+            <ToastContainer />
           </div>
         </div>
       </section>

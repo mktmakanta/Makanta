@@ -1,6 +1,7 @@
 import { Inter, Karla } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/NavBar";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${karla.variable} antialiased `}>
         <Navbar />
         {children}
+        <Toaster position="top-right" reverseOrder={false} />
       </body>
     </html>
   );
