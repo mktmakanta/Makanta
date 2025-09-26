@@ -174,10 +174,14 @@ const Navbar = () => {
                   </li>
                 ))}
 
-                <button className="relative mt-20 text-black md:hidden p-2 px-3 bg-orange-100 font-karla font-medium cursor-pointer  group">
+                <Link
+                  href="/Makanta Resume.pdf"
+                  target="_blank"
+                  className="relative mt-20 text-black md:hidden p-2 px-3 bg-orange-100 font-karla font-medium cursor-pointer  group"
+                >
                   <span className="border border-white absolute p-2 px-3 top-0 left-0 w-full h-full translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-400  "></span>
                   Resume
-                </button>
+                </Link>
               </ul>
             </nav>
           </div>
