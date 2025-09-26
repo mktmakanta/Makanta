@@ -4,3 +4,8 @@
   --font-inter: var(--font-inter);
   --font-karla: var(--font-karla);
 }
+
+::selection {
+  background-color: #fed7aa; /* blue */
+  color: #351701; /* white text */
+}

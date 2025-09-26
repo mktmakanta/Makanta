@@ -22,7 +22,7 @@ const projects = [
     logo: "/counter.png",
     link: "https://counterbank.vercel.app",
   },
-   {
+  {
     name: "Numtify",
     logo: "/numtify.png",
     link: "https://numtify.vercel.app",
@@ -33,11 +33,10 @@ const projects = [
     link: "https://medium.com/@makanta",
   },
   {
-    name: "Portfolio",
+    name: "Portfolio Website",
     logo: "/portfolio.png",
-    link: "https://makanta.xyz",
+    link: "https://makanta.vercel.app",
   },
-
 ];
 
 const Home = () => {
@@ -76,7 +75,7 @@ const Home = () => {
   };
 
   return (
-    <main className=" max-w-full bg-white  ">
+    <main id="/" className=" max-w-full bg-white  ">
       <section className="intro-section grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto items-center px-4 lg:pt-16 pb-8 lg:px-0 h-auto ">
         <div className="my-image flex justify-center items-center lg:pt-20 overflow-y-clip">
           <Image
@@ -108,19 +107,21 @@ const Home = () => {
             Frontend Developer
           </h1>
           <h3 className="font-inter tracking-wider ">
-            I am a developer specializing in frontend with React and Next.js,
-            but I also work across the stack with Node.js and databases to
-            create scalable, secure, and inclusive applications.
+            I am a developer specializing in frontend with React, Next.js and
+            Typecript, but I also work across the stack with Node.js and
+            databases to create scalable, secure, and inclusive applications.
           </h3>
-          <button className="relative p-2 px-3 bg-orange-100 font-karla font-medium cursor-pointer  group">
-            <span className="border absolute p-2 px-3 top-0 left-0 w-full h-full translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-400  "></span>
-            Get in touch
-          </button>
+          <Link href="mailto:mktmakantamkt@gmail.com?subject=Work Inquiry&body=Hello, I want to contact you">
+            <button className="relative p-2 px-3 bg-orange-100 font-karla font-medium cursor-pointer  group">
+              <span className="border absolute p-2 px-3 top-0 left-0 w-full h-full translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-400  "></span>
+              Get in touch
+            </button>
+          </Link>
         </div>
       </section>
 
       {/* about section */}
-      <section className="about-section bg-[#f7f7f7] p-4">
+      <section id="about" className="about-section bg-[#f7f7f7] p-4">
         <div className=" grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto items-start px-4 pt-24 pb-14 lg:px-0 h-auto">
           <div className="relative font-karla mb-6">
             <h1
@@ -216,7 +217,10 @@ const Home = () => {
         </div>
       </section>
       {/* projects sections */}
-      <section className="projects-section p-8 lg:p-4 py-16 w-full  bg-white">
+      <section
+        id="projects"
+        className="projects-section p-8 lg:p-4 py-16 w-full  bg-white"
+      >
         <div className="max-w-6xl mx-auto lg:pt-16">
           <div className="relative font-karla mx-auto w-max mb-12">
             <h1
@@ -270,7 +274,7 @@ const Home = () => {
         </div>
         {/* Contact section */}
       </section>
-      <section className=" about-section bg-[#f7f7f7] p-4 py-16">
+      <section id="contact" className=" about-section bg-[#f7f7f7] p-4 py-16">
         <div className=" grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto items-start px-4 pt-10 gap-4 lg:px-0 h-auto">
           <div className=" relative font-karla ">
             <h1
@@ -364,27 +368,33 @@ const Home = () => {
         </div>
       </section>
       {/* footer section */}
-      <footer className="about-section bg-white p-4">
+      <footer id="footer" className="about-section bg-white p-4">
         <div className=" max-w-6xl mx-auto items-start px-4 divide divide-y  lg:px-0 h-auto py-24 ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-20">
             <div className="text-lg space-y-2 font-inter">
               <h1>SAY HELLO</h1>
               <div>
                 <div className="text-orange-500">mktmakantamkt@gmail.com</div>
-                <div className="text-orange-500">t.me/makanta</div>
+                <div className="text-orange-500">
+                  <Link
+                    href="https://wa.me/2348062482089"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex hre"
+                  >
+                    t.me/makanta
+                    <span className="absolute left-0 bottom-[-4px] h-[0.5px] w-0 bg-orange-500 transition-all duration-500 group-hover:w-full"></span>
+                  </Link>
+                </div>
               </div>
             </div>
-            <div className="text-lg space-y-2 font-inter flex flex-col">
-              <Link
-                href="/Makanta_Resume.pdf"
-                target="_blank"
-                className="relative group inline-block "
-              >
-                <span className="absolute left-0 bottom-[-4px] h-[0.5px] w-0 bg-orange-500 transition-all duration-500 group-hover:w-full"></span>
+            <div className="text-lg space-y-2 font-inter flex flex-col items-start">
+              <Link href="#" target="_blank" className="relative group ">
                 Home
+                <span className="absolute left-0 bottom-[-4px] h-[0.5px] w-0 bg-orange-500 transition-all duration-500 group-hover:w-full"></span>
               </Link>
               <Link
-                href="/Makanta_Resume.pdf"
+                href="#projects"
                 target="_blank"
                 className="relative group "
               >
@@ -392,7 +402,7 @@ const Home = () => {
                 <span className="absolute left-0 bottom-[-4px] h-[0.5px] w-0 bg-orange-500 transition-all duration-500 group-hover:w-full"></span>
               </Link>
               <Link
-                href="/Makanta_Resume.pdf"
+                href="/Makanta Resume.pdf"
                 target="_blank"
                 className="relative group "
               >
@@ -406,29 +416,26 @@ const Home = () => {
             {" "}
             <div> © Ibrahim Makanta 2025</div>
             <div className="flex space-x-4 mt-4">
-              <Link
-                href="https://www.instagram.com/makanta_dev/"
-                target="_blank"
-              >
+              <Link href="https://github.com/mktmakanta" target="_blank">
                 <FaGithub className="size-6 hover:text-purple-600 transition-all duration-500" />
               </Link>
 
               <Link
-                href="https://www.instagram.com/makanta_dev/"
+                href="https://www.linkedin.com/in/muhammad-ibrahim-a18764246"
                 target="_blank"
               >
                 <FaLinkedin className="size-6 hover:text-sky-600 transition-all duration-500" />
               </Link>
 
               <Link
-                href="https://www.instagram.com/makanta_dev/"
+                href="https://x.com/Makanta__?t=XGcb_3z0WNHfjXLAYdo3PA&s=08"
                 target="_blank"
               >
                 <FaXTwitter className="size-6 hover:text-orange-200 transition-all duration-500" />
               </Link>
 
               <Link
-                href="https://www.instagram.com/makanta_dev/"
+                href="mailto:mktmakantamkt@gmail.com?subject=Work Inquiry&body=Hello, I want to contact you"
                 target="_blank"
               >
                 <HiOutlineMail className="size-6 hover:text-green-600 transition-all duration-500" />

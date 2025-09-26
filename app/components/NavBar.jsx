@@ -13,10 +13,10 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "#" },
+    { name: "About Me", href: "about" },
+    { name: "Projects", href: "projects" },
+    { name: "Contact", href: "contact" },
   ];
 
   const handleNavClick = (href) => {
@@ -31,13 +31,14 @@ const Navbar = () => {
     <header className="bg-white shadow-sm sticky top-0 w-full z-50">
       <div className=" mx-auto  p-4 md:p-6 md:px-14">
         <div className="flex justify-between items-center">
-          <span
+          <Link
+            href="/"
             className={` font-karla tracking-widest font-medium ${
               isMenuOpen ? "text-white" : "text-gray-800"
             }`}
           >
             MAKANTA
-          </span>
+          </Link>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -72,7 +73,10 @@ const Navbar = () => {
                     CONTACT
                   </h1>
                   <div className="text-lg space-y-2 ">
-                    <Link className="group relative flex  hre" href="//">
+                    <Link
+                      href="mailto:mktmakantamkt@gmail.com?subject=Work Inquiry&body=Hello, I want to contact you"
+                      className="group relative flex  hre"
+                    >
                       mktmakantamkt@gmail.com
                       <ArrowUpRight
                         strokeWidth={1.25}
@@ -81,8 +85,20 @@ const Navbar = () => {
                       />
                       <span className="absolute left-0 bottom-[-3px] h-[0.5px] w-0 bg-orange-500 transition-all duration-500 group-hover:w-full"></span>
                     </Link>
-
-                    <span>+(234) 806 248 2089</span>
+                    <Link
+                      href="https://wa.me/2348062482089"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative inline-flex hre"
+                    >
+                      t.me/makanta
+                      <ArrowUpRight
+                        strokeWidth={1.25}
+                        size={18}
+                        className="group-hover:translate-x-1 mt-2 ml-2 group-hover:-translate-y-1 transition-transform duration-300"
+                      />
+                      <span className="absolute left-0 bottom-[-3px] h-[0.5px] w-0 bg-orange-500 transition-all duration-500 group-hover:w-full"></span>
+                    </Link>
                   </div>
                 </div>
                 <div className="space-y-1">
@@ -90,29 +106,26 @@ const Navbar = () => {
                     SOCIAL
                   </h1>
                   <div className="flex space-x-4 mt-4">
-                    <Link
-                      href="https://www.instagram.com/makanta_dev/"
-                      target="_blank"
-                    >
+                    <Link href="https://github.com/mktmakanta" target="_blank">
                       <FaGithub className="size-6 hover:text-purple-600 transition-all duration-500" />
                     </Link>
 
                     <Link
-                      href="https://www.instagram.com/makanta_dev/"
+                      href="https://www.linkedin.com/in/muhammad-ibrahim-a18764246"
                       target="_blank"
                     >
                       <FaLinkedin className="size-6 hover:text-sky-600 transition-all duration-500" />
                     </Link>
 
                     <Link
-                      href="https://www.instagram.com/makanta_dev/"
+                      href="https://x.com/Makanta__?t=XGcb_3z0WNHfjXLAYdo3PA&s=08"
                       target="_blank"
                     >
                       <FaXTwitter className="size-6 hover:text-orange-200 transition-all duration-500" />
                     </Link>
 
                     <Link
-                      href="https://www.instagram.com/makanta_dev/"
+                      href="mailto:mktmakantamkt@gmail.com?subject=Work Inquiry&body=Hello, I want to contact you"
                       target="_blank"
                     >
                       <HiOutlineMail className="size-6 hover:text-green-600 transition-all duration-500" />
@@ -124,11 +137,11 @@ const Navbar = () => {
                     RESUME
                   </h1>
                   <Link
-                    href="/Makanta_Resume.pdf"
+                    href="/Makanta Resume.pdf"
                     target="_blank"
                     className="text-lg group flex relative"
                   >
-                    Download{" "}
+                    Open resume
                     <ArrowUpRight
                       strokeWidth={1.25}
                       size={18}
