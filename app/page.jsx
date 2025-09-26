@@ -202,7 +202,7 @@ const Home = () => {
               </h1>
               <p className="mt-2">
                 I’m actively seeking opportunities where I can contribute as a
-                fullstack developer—leading with frontend expertise while
+                fullstack developer leading with frontend expertise while
                 strengthening backend systems. My goal is to build inclusive,
                 high-performing applications that balance thoughtful design with
                 robust engineering. I’m excited to join a{" "}
