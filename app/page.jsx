@@ -104,12 +104,14 @@ const Home = () => {
           </div>
           <h1 className="font-karla font-semibold text-2xl">
             {" "}
-            Frontend Developer
+            Frontend & Web3 Developer
           </h1>
           <h3 className="font-inter tracking-wider ">
-            I am a developer specializing in frontend with React, Next.js and
-            Typecript, but I also work across the stack with Node.js and
-            databases to create scalable, secure, and inclusive applications.
+            I’m a developer specializing in frontend engineering with React,
+            Next.js, and TypeScript, creating fast and engaging user
+            experiences. I also work across the stack with Node.js, databases,
+            and Web3 integrations, building scalable, secure, and decentralized
+            applications.
           </h3>
           <Link href="mailto:mktmakantamkt@gmail.com?subject=Work Inquiry&body=Hello, I want to contact you">
             <button className="relative p-2 px-3 bg-orange-100 font-karla font-medium cursor-pointer  group">
@@ -139,19 +141,25 @@ const Home = () => {
           {/* right side */}
           <div className=" font-inter tracking-wider space-y-4">
             <div>
-              I’m a
+              I’m a{" "}
               <span className="bg-orange-100 inline-block px-2 -skew-x-6 font-medium">
                 frontend-focused
-              </span>
-              fullstack developer with 3+ years of experience crafting
-              accessible, engaging, and scalable web applications. My specialty
-              is building pixel-perfect user interfaces with{" "}
-              <span className="bg-orange-100 inline-block px-2 -skew-x-6 font-medium">
-                React, Next.js, Typescript
               </span>{" "}
-              and modern UI tools, while also delivering secure and reliable
-              backend solutions with Node.js, MongoDB, Prisma, and Supabase.
+              fullstack developer with 3+ years of experience crafting
+              accessible, engaging, and scalable web applications. I specialize
+              in building pixel-perfect interfaces with{" "}
+              <span className="bg-orange-100 inline-block px-2 -skew-x-6 font-medium">
+                React, Next.js, and TypeScript
+              </span>{" "}
+              while integrating modern{" "}
+              <span className="bg-orange-100 inline-block px-2 -skew-x-6 font-medium">
+                Web3 technologies
+              </span>{" "}
+              to deliver secure and future-ready user experiences. On the
+              backend, I work with Node.js, MongoDB, Prisma, and Supabase to
+              build reliable, scalable systems.
             </div>
+
             <div>
               With a background in Electrical and Electronics Engineering, I
               approach development with both creative and structured
@@ -171,6 +179,7 @@ const Home = () => {
                 <li className="pr-3">JavaScript</li>
                 <li className="pr-3">React</li>
                 <li className="pr-3">Next.js</li>
+                <li className="pr-3">Ethers.js</li>
                 <li className="pr-3">Typecript</li>
                 <li>Node.js </li>
               </ul>

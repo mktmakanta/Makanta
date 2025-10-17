@@ -18,7 +18,7 @@ const karla = Karla({
 export const metadata = {
   title: "Makanta dev | Frontend Developer",
   description:
-    " Portfolio website of Makanta, a frontend developer specializing in React, Next.js, and modern web technologies.",
+    " Portfolio website of Makanta, a frontend developer specializing in React, Next.js, and modern web3 technologies.",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
@@ -30,6 +30,7 @@ export const metadata = {
     "SEO",
     "React",
     "Next.js",
+    "Ethers.js",
     "Makanta Ibrahim",
   ],
 };
