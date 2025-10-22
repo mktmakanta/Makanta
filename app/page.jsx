@@ -20,7 +20,7 @@ const projects = [
   {
     name: "BITFUSE",
     logo: "/bitfuse.png",
-    link: "https://bitfuse.vercel.app",
+    link: "https://bitfuse-defi.vercel.app",
   },
   {
     name: "Counter Bank",
