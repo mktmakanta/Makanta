@@ -18,6 +18,11 @@ const projects = [
     link: "https://sungridsolution.com",
   },
   {
+    name: "BITFUSE",
+    logo: "/bitfuse.png",
+    link: "https://bitfuse.vercel.app",
+  },
+  {
     name: "Counter Bank",
     logo: "/counter.png",
     link: "https://counterbank.vercel.app",
@@ -27,11 +32,7 @@ const projects = [
     logo: "/numtify.png",
     link: "https://numtify.vercel.app",
   },
-  {
-    name: "Medium",
-    logo: "/medium.png",
-    link: "https://medium.com/@makanta",
-  },
+
   {
     name: "Portfolio Website",
     logo: "/portfolio.png",
@@ -104,7 +105,7 @@ const Home = () => {
           </div>
           <h1 className="font-karla font-semibold text-2xl">
             {" "}
-            Frontend & Web3 Developer
+            Frontend Developer | Web3
           </h1>
           <h3 className="font-inter tracking-wider ">
             I’m a developer specializing in frontend engineering with React,
